@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  myservice:
+    image: myImage:latest
+    container_name: my-container-name
+    restart: always
+    volumes:
+      -
+    labels:
+      # Enable traefik
+      - "traefik.enable=true"
+      # Add host and set Path Prefix
+      # Set Example: ${myroute} = myroute
+      - "traefik.http.routers.${myroute}.rule=Host(`myhost.com`) && PathPrefix(`/myweb`)"
+
+      # Set Middlebare for rewrite path
+      - "traefik.http.routers.${myroute}.middlewares=${mypath-prefic}"
+      - "traefik.http.middlewares.${mypath-prefic}.stripprefix.prefixes=/portainer"
+
+      # set loadbalancer export (Default: 80)
+      - "traefik.http.services.${myroute}.loadbalancer.server.port=9000"
+      - "traefik.http.routers.${myroute}.service=portainer"
+
+      # Set TLS HTTPS
+      - "traefik.http.routers.${myroute}.tls=true"
+
+      # Set network if docker use multinetwork
+      - "traefik.docker.network=proxy"
+
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

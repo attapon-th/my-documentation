@@ -1,0 +1,39 @@
+############################
+# STEP 1 build executable binary
+############################
+FROM python:3.8-slim-buster AS pyhon-builder
+
+
+RUN apt-get update \
+    && apt-get install gcc -y \
+    && apt-get clean
+WORKDIR /app
+
+
+# copy python requestment
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install --user -r /app/requirements.txt
+
+
+############################
+# STEP 2 build a small image 
+############################
+FROM python:3.8-slim-buster as app
+COPY --from=pyhon-builder /root/.local /root/.local
+
+# Copy Python Script 
+COPY /pyscript /app
+
+# Set Envolopment
+ENV TZ=Asia/Bangkok
+ENV PATH=/root/.local/bin:/app:$PATH
+
+WORKDIR /app
+
+#EXPOSE 80
+
+ENTRYPOINT ["python"]
+
+# app start up
+CMD ["{{app.py}}"]

@@ -19,8 +19,10 @@ services:
       - "traefik.http.middlewares.${mypath-prefic}.stripprefix.prefixes=/portainer"
 
       # set loadbalancer export (Default: 80)
-      - "traefik.http.services.${myroute}.loadbalancer.server.port=9000"
-      - "traefik.http.routers.${myroute}.service=portainer"
+      # create new service
+      - "traefik.http.services.${myservice}.loadbalancer.server.port=9000"
+      # set server
+      - "traefik.http.routers.${myroute}.service=${myservice}"
 
       # Set TLS HTTPS
       - "traefik.http.routers.${myroute}.tls=true"

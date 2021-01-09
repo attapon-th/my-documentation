@@ -1,0 +1,35 @@
+# file referent: https://www.slideshare.net/RaPz1/build-golang-projects-properly-with-makefiles?ref=https://cdn.embedly.com/
+
+
+#target หา ทุก command ใน Makefile เลยให้ใช้
+#ref=https://medium.com/@goangle/phony-%E0%B9%83%E0%B8%99-makefile-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3-8d19d013955e
+.PHONY: all
+
+# Set binary output
+BINARY=gomake
+
+VERSION=1.0.0
+BUILD=`git rev-parse HEAD`
+CHECKSUM=`shasum ${BINARY}`
+
+# Set Version and Build HEAD for 
+LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
+
+ENV.DEV:
+	echo "set env"
+	APP_DEV=true 
+
+dev: ENV.DEV
+	go run ${LDFLAGS} "cmd/${BINARY}/main.go"
+
+${BINARY}:
+	go build  ${LDFLAGS} -o ${BINARY} "cmd/${BINARY}/main.go"
+
+
+rebuild: clean ${BINARY}
+	echo $(shasum ${BINARY}) " ${VERSION} ${BUILD}" > "${BINARY}.sum"
+
+clean:
+	if [ -f ${BINARY} ] ; then rm ${BINARY} ; fi
+	if [ -f "${BINARY}.sum" ] ; then rm "${BINARY}.sum" ; fi
+

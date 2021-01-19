@@ -5,10 +5,10 @@
 .PHONY: all
 
 # Set binary output
-BINARY=covid_summary_api
+BINARY=<project_name>
 
 
-VERSION=1.1.0
+VERSION=1.0.0
 
 ifndef BUILD
 BUILD=`git rev-parse HEAD`
@@ -38,7 +38,7 @@ docker-push: docker-addtags
 	docker push ${GIT_REPO_URL}:latest
 	docker push ${GIT_REPO_URL}:${VERSION}
 
-
+# call in build dockerfile
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
 	-a -installsuffix cgo \
@@ -52,12 +52,10 @@ clean:
 	if [ -f ${BINARY} ] ; then rm ${BINARY} ; fi
 	if [ -f "${BINARY}.sum" ] ; then rm "${BINARY}.sum" ; fi
 
-
-
-
 send-static:
 	scp ./public/* indev:/home/attapon/covid-summary-api/public
 	scp ./docker-compose-indev.yml indev:/home/attapon/covid-summary-api/docker-compose.yml
+	
 docker-compose-up: send-static	
 	ssh indev "cd /home/attapon/covid-summary-api; \
 	docker-compose pull; \
@@ -159,6 +157,6 @@ CMD ["-s", ":80"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4ODE3ODk4LDE4Mjg1NTM2NywtODA5Nz
-Q3MDA4XX0=
+eyJoaXN0b3J5IjpbMTY3MTYyMDM3MywtOTg4MTc4OTgsMTgyOD
+U1MzY3LC04MDk3NDcwMDhdfQ==
 -->

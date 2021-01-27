@@ -4,8 +4,9 @@
 ## Contents
 - [My Documentation](#My-Documentation) 
      - [Contents](#contents)
-     - [Dockerfile](#dockerfile)
-     - [Docker-Compose](#docker-compose)
+     - [Docker Doc](./docker)
+     - - [Dockerfile](#dockerfile)
+     - - [Docker-Compose](#docker-compose)
      - [GOLANG](#golang)
 
 ## SSH Tunnel
@@ -14,8 +15,11 @@
 ssh -L 9000:8.8.8.8:8080 -N  mophid
 ```
 
-
-## Dockerfile 
+## Docker
+ - traefik
+	 > set logrotation
+	 > 
+### Dockerfile 
 - Python
     - [Python - basic image](./dockerfile/Dockerfile-python-basic)
 
@@ -25,9 +29,10 @@ ssh -L 9000:8.8.8.8:8080 -N  mophid
 - Vue.js
     - [Vuejs Nuxt - nuxt generate image](./dockerfile/Dockerfile-vuejs-nuxt)
 
-## docker-compose
+### docker-compose
 - Traefik
     - [docker@service - for service other join `traefic Network`](./docker-compose/docker-compose-for-tarfick.yml)
+---
 
 ## SSH Key
 - [SSH remote from keyfile](./ssh/README.MD)
@@ -37,6 +42,3 @@ ssh -L 9000:8.8.8.8:8080 -N  mophid
 
 ## GOLANG
 - [GO Summary](./golang/summary.md)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Njc5Nzk0NjZdfQ==
--->

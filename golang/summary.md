@@ -5,7 +5,7 @@
 .PHONY: all
 
 # Set binary output
-BINARY=<Project name>
+BINARY=<project_name>
 
 
 VERSION=1.0.0
@@ -19,31 +19,48 @@ APP_DEV=false
 # Set Version and Build HEAD for 
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
 
+GIT_REPO_URL=registry.gitlab.com/indev-moph/covid-project/api-summary
+
 dev:
-	APP_DEV=true \
-	go run ${LDFLAGS} "cmd/${BINARY}/main.go"
+	APP_DEV=true URL_PREFIX=/summary-api \
+	go run ${LDFLAGS} cmd/${BINARY}/main.go -s localhost:8080 -c .env
 
 build:
 	go build ${LDFLAGS} -o ${BINARY} "cmd/${BINARY}/main.go"
 
 docker-build:
-	docker build --build-arg BUILDDOCKER=$(BUILD) -t registry.gitlab.com/indev-moph/covid-dashboard/api-summary:latest .
+	docker build --build-arg BUILDDOCKER=$(BUILD) -t ${GIT_REPO_URL}:latest .
 
 docker-addtags:
-	docker tag registry.gitlab.com/indev-moph/covid-dashboard/api-summary:latest registry.gitlab.com/indev-moph/covid-dashboard/api-summary:${VERSION}
+	docker tag ${GIT_REPO_URL}:latest ${GIT_REPO_URL}:${VERSION}
 
 docker-push: docker-addtags
-	docker push -a registry.gitlab.com/indev-moph/covid-dashboard/api-summary
+	docker push ${GIT_REPO_URL}:latest
+	docker push ${GIT_REPO_URL}:${VERSION}
 
+# call in build dockerfile
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
 	-a -installsuffix cgo \
 	${LDFLAGS} \
 	-o AppMain "cmd/${BINARY}/main.go"
 
+rebuild: clean ${BINARY}
+	echo $(shasum ${BINARY}) " ${VERSION} ${BUILD}" > "${BINARY}.sum"
+
 clean:
 	if [ -f ${BINARY} ] ; then rm ${BINARY} ; fi
 	if [ -f "${BINARY}.sum" ] ; then rm "${BINARY}.sum" ; fi
+
+send-static:
+	scp ./public/* indev:/home/attapon/covid-summary-api/public
+	scp ./docker-compose-indev.yml indev:/home/attapon/covid-summary-api/docker-compose.yml
+	
+docker-compose-up: send-static	
+	ssh indev "cd /home/attapon/covid-summary-api; \
+	docker-compose pull; \
+	docker-compose  up -d"
+
 ```
 
 ## Dockerfile 
@@ -140,5 +157,6 @@ CMD ["-s", ":80"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwOTc0NzAwOF19
+eyJoaXN0b3J5IjpbMTY3MTYyMDM3MywtOTg4MTc4OTgsMTgyOD
+U1MzY3LC04MDk3NDcwMDhdfQ==
 -->

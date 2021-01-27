@@ -9,6 +9,11 @@
      - - [Docker-Compose](#docker-compose)
      - [GOLANG](#golang)
 
+## SSH Tunnel
+```shell
+       local:server-remote-to      <- ssh ->
+ssh -L 9000:8.8.8.8:8080 -N  mophid
+```
 
 ## Docker
  - traefik
@@ -37,6 +42,3 @@
 
 ## GOLANG
 - [GO Summary](./golang/summary.md)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NzkxMjczMV19
--->

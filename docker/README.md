@@ -25,7 +25,7 @@ Config:
   dateformat .%Y-%m-%d
   create 0644 root root
   postrotate
-   docker kill --signal="USR1" $(docker ps | grep traefik:v2. | awk '{print $1}')
+   docker kill --signal="USR1" <contrainer id or name>
   endscript
 }
 ```
@@ -36,5 +36,5 @@ logrotate /etc/logrotate.conf --debug
 logrotate /etc/logrotate.conf
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ5MjczNTk1XX0=
+eyJoaXN0b3J5IjpbLTgyMjA0MTQyMl19
 -->

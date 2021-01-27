@@ -10,7 +10,9 @@
 
 
 ## Docker
- - 
+ - traefik
+	 > set logrotation
+	 > 
 ### Dockerfile 
 - Python
     - [Python - basic image](./dockerfile/Dockerfile-python-basic)
@@ -35,5 +37,5 @@
 ## GOLANG
 - [GO Summary](./golang/summary.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzOTM2NjM5Nl19
+eyJoaXN0b3J5IjpbLTYxODQ1NTMwNl19
 -->

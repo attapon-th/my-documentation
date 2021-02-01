@@ -3,18 +3,9 @@
 
 ## Initialization
 ```shell
-add_user()  { 
-	USER=$1
-	PASSWORD=$2
-	echo "Adding user $USER ..." echo useradd -c $USER
-	echo passwd $USER $PASSWORD
-	echo "Added user $USER And pass $PASSWORD"  
-}
-add_group(){
-	GROUP=$2
-	USER=$1
-	usermod -aG $GROUP $USERNAME
-}
+./centos.sh add_user <user> <password>
+./centos.sh add_group <user> <group>
+
 ```
 
 ## Recommend
@@ -34,5 +25,6 @@ add_group(){
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNzE1NjEwNCw2ODE1OTc4MTZdfQ==
+eyJoaXN0b3J5IjpbLTIwMzA1NjQwODgsMTIxNzE1NjEwNCw2OD
+E1OTc4MTZdfQ==
 -->

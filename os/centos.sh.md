@@ -14,20 +14,19 @@ add_group(){
 }
 
 
-add_key(){
+add_sshkey(){
 	USER=$1
 	KEY_PUB=$2	
 	USER_HOME=/home/$USER
 	sudo mkdir -p $USER_HOME/.ssh
-	sudo echo "$KEY_PUB" >> /home/$USER/.ssh/authorized_keys
-	sudo chown -R $USER:$USER  /home/$USER/.ssh
-	sudo chmod chmod -R go= ~/.ssh
-	chmod 600 /home/$USER/authorized_keys
-
+	sudo echo "$KEY_PUB" >> $USER_HOME/.ssh/authorized_keys
+	sudo chown -R $USER:$USER  $USER_HOME/.ssh
+	sudo chmod -R go= $USER_HOME/.ssh
+	chmod 600 $USER_HOME/.ssh/authorized_keys
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU1Njc2NDk5XX0=
+eyJoaXN0b3J5IjpbMjU2NTU1NzM1XX0=
 -->

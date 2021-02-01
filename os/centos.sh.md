@@ -8,13 +8,19 @@ add_user()  {
 	echo "Added user $USER And pass $PASSWORD"  
 }
 add_group(){
-	GROUP=$2
 	USER=$1
+	GROUP=$2	
 	usermod -aG $GROUP $USERNAME
+}
+
+
+add_key(){
+	USER=$1
+	GROUP=$2	
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTkyNDY1Mjc4XX0=
+eyJoaXN0b3J5IjpbLTIwMjY4NzI4NDddfQ==
 -->

@@ -1,3 +1,5 @@
+```shell
+#!$SHELL
 add_user()  { 
 	USER=$1
 	PASSWORD=$2
@@ -10,6 +12,9 @@ add_group(){
 	USER=$1
 	usermod -aG $GROUP $USERNAME
 }
+
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTAyNjMyMTA2XX0=
+eyJoaXN0b3J5IjpbNTkyNDY1Mjc4XX0=
 -->

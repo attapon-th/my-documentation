@@ -17,13 +17,17 @@ add_group(){
 add_key(){
 	USER=$1
 	KEY_PUB=$2	
-	sudo mkdir -p /home/$USER/.ssh
+	USER_HOME=/home/$USER
+	sudo mkdir -p $USER_HOME/.ssh
 	sudo echo "$KEY_PUB" >> /home/$USER/.ssh/authorized_keys
-	sudo chown $USER:$USER
+	sudo chown -R $USER:$USER  /home/$USER/.ssh
+	sudo chmod chmod -R go= ~/.ssh
+	chmod 600 /home/$USER/authorized_keys
+
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjIxMDYwMjJdfQ==
+eyJoaXN0b3J5IjpbMzU1Njc2NDk5XX0=
 -->

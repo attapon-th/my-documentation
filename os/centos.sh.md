@@ -16,11 +16,13 @@ add_group(){
 
 add_key(){
 	USER=$1
-	GROUP=$2	
+	KEY_PUB=$2	
+	sudo mkdir -p /home/$USER/.ssh
+	sodu
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjY4NzI4NDddfQ==
+eyJoaXN0b3J5IjpbLTEzMzY0Njg4MDZdfQ==
 -->

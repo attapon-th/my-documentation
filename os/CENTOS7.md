@@ -6,12 +6,13 @@
 ```shell
 ./centos.sh add_user <user> <password>
 ./centos.sh add_group <user> <group>
-
+./centos.sh add_sshkey <user> <pubilc_key>
 ```
 
 ## Recommend
 ```shell
-
+yum install -y update && \
+yum -y install epel-release
 ```
 ## ssh
 
@@ -26,6 +27,6 @@
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyOTkxNzg1MiwxMjE3MTU2MTA0LDY4MT
-U5NzgxNl19
+eyJoaXN0b3J5IjpbLTE3NzkyNTYzNzYsMTIxNzE1NjEwNCw2OD
+E1OTc4MTZdfQ==
 -->

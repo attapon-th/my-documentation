@@ -11,13 +11,13 @@
 
 ## Recommend
 ```shell
-sudo yum -y install update && \
-sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-sudo yum -y install \
+sudo yum -y install update \
+&& sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+&& sudo yum -y install \
 	epel-release \
 	htop \
 	rsyne \
-	
+	jq	
 ```
 
 ## Docker
@@ -26,6 +26,6 @@ sudo yum -y install \
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc5OTU2NjM4LDEyMTcxNTYxMDQsNjgxNT
-k3ODE2XX0=
+eyJoaXN0b3J5IjpbLTEwOTQ3MDY3MzEsMTIxNzE1NjEwNCw2OD
+E1OTc4MTZdfQ==
 -->

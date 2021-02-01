@@ -26,7 +26,12 @@ sudo yum install -y yum-utils \
 && sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo \
-&& 
+&& sudo yum install docker-ce docker-ce-cli containerd.io \
+&& sudo systemctl start docker \
+&& sudo systemctl enable docker \
+&& sudo docker swarm init
+
+
 
 
 ```
@@ -34,6 +39,6 @@ sudo yum install -y yum-utils \
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MzIyNjc5OCwxMjE3MTU2MTA0LDY4MT
-U5NzgxNl19
+eyJoaXN0b3J5IjpbNTQwOTY0MTUzLDEyMTcxNTYxMDQsNjgxNT
+k3ODE2XX0=
 -->

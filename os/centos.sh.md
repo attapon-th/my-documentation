@@ -22,11 +22,11 @@ add_sshkey(){
 	sudo echo "$KEY_PUB" >> $USER_HOME/.ssh/authorized_keys
 	sudo chown -R $USER:$USER  $USER_HOME/.ssh
 	sudo chmod -R go= $USER_HOME/.ssh
-	chmod 600 $USER_HOME/.ssh/authorized_keys
+	sudo chmod 600 $USER_HOME/.ssh/authorized_keys
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU2NTU1NzM1XX0=
+eyJoaXN0b3J5IjpbMTg2OTEwNjA4NiwyNTY1NTU3MzVdfQ==
 -->

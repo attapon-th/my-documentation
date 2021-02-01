@@ -4,12 +4,12 @@
 ## Initialization
 ```shell
 create_user()
-{
-USERNAME=$1
-adduser <username>
-passwd <username>
-usermod -aG wheel <username>
-}
+add_user()  { 
+	USER=$1
+	PASSWORD=$2
+	echo "Adding user $USER ..." echo useradd -c $USER
+  echo passwd $USER $PASSWORD
+  echo "Added user $USER ($COMMENTS) with pass $PASSWORD"  }
 ```
 
 ## Recommend
@@ -29,5 +29,5 @@ usermod -aG wheel <username>
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NTE2MjUxMF19
+eyJoaXN0b3J5IjpbLTI1NzU2ODg5MV19
 -->

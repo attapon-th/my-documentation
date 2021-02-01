@@ -12,8 +12,8 @@ add_user()  {
 }
 add_group(){
 	GROUP=$2
-	USERNAME=$1
-	usermod -aG ${GROUP} ${}
+	USER=$1
+	usermod -aG $GROUP $USERNAME
 }
 ```
 
@@ -34,5 +34,5 @@ add_group(){
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1Njk0NjQxMyw2ODE1OTc4MTZdfQ==
+eyJoaXN0b3J5IjpbMTIxNzE1NjEwNCw2ODE1OTc4MTZdfQ==
 -->

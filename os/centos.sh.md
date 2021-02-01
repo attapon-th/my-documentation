@@ -18,11 +18,12 @@ add_key(){
 	USER=$1
 	KEY_PUB=$2	
 	sudo mkdir -p /home/$USER/.ssh
-	sodu
+	sudo echo "$KEY_PUB" >> /home/$USER/.ssh/authorized_keys
+	sudo chown $USER:$USER
 }
 
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzY0Njg4MDZdfQ==
+eyJoaXN0b3J5IjpbLTEzNjIxMDYwMjJdfQ==
 -->

@@ -11,8 +11,13 @@
 
 ## Recommend
 ```shell
-yum install -y update && \
-yum -y install epel-release
+sudo yum install -y update && \
+
+sudo yum -y install \
+	epel-release \
+	htop \
+	rsyne \
+	
 ```
 ## ssh
 
@@ -27,6 +32,6 @@ yum -y install epel-release
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzkyNTYzNzYsMTIxNzE1NjEwNCw2OD
+eyJoaXN0b3J5IjpbLTExMzE1OTY2NTgsMTIxNzE1NjEwNCw2OD
 E1OTc4MTZdfQ==
 -->

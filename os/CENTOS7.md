@@ -3,13 +3,13 @@
 
 ## Initialization
 ```shell
-#login root
+create_user()
+{
+USERNAME=$1
 adduser <username>
 passwd <username>
-
-#add group
 usermod -aG wheel <username>
-
+}
 ```
 
 ## Recommend
@@ -29,5 +29,5 @@ usermod -aG wheel <username>
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNTI3OTY4MF19
+eyJoaXN0b3J5IjpbMTA1NTE2MjUxMF19
 -->

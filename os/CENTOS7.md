@@ -21,11 +21,19 @@ sudo yum -y install update \
 ```
 
 ## Docker
+```shell
+sudo yum install -y yum-utils \
+&& sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo \
+&& 
 
+
+```
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTQ3MDY3MzEsMTIxNzE1NjEwNCw2OD
-E1OTc4MTZdfQ==
+eyJoaXN0b3J5IjpbMjA0MzIyNjc5OCwxMjE3MTU2MTA0LDY4MT
+U5NzgxNl19
 -->

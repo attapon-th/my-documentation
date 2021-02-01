@@ -4,7 +4,12 @@
 ## Initialization
 ```shell
 #login root
-adduser
+adduser <username>
+passwd <username>
+
+#add group
+usermod -aG wheel <username>
+
 ```
 
 ## Recommend
@@ -24,5 +29,5 @@ adduser
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA5NjY5ODYwXX0=
+eyJoaXN0b3J5IjpbLTYzNTI3OTY4MF19
 -->

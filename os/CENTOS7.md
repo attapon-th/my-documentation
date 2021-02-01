@@ -31,14 +31,11 @@ sudo yum install -y yum-utils \
 && sudo systemctl enable docker \
 && sudo docker swarm init
 
-
-
-
 ```
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQwOTY0MTUzLDEyMTcxNTYxMDQsNjgxNT
+eyJoaXN0b3J5IjpbMjg0MTgyNzIzLDEyMTcxNTYxMDQsNjgxNT
 k3ODE2XX0=
 -->

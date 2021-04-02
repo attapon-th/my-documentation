@@ -32,10 +32,12 @@ sudo yum install -y yum-utils \
 && sudo docker swarm init
 
 ```
+```
 
+```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0MTgyNzIzLDEyMTcxNTYxMDQsNjgxNT
-k3ODE2XX0=
+eyJoaXN0b3J5IjpbLTE5MjkwODI0NTcsMjg0MTgyNzIzLDEyMT
+cxNTYxMDQsNjgxNTk3ODE2XX0=
 -->

@@ -34,27 +34,19 @@ RUN mkdir -p /app
 ARG BUILDDOCKER # build version in git commint state
 ARG BINARY # output file binary name 
 
-# build 
+# build go file
 RUN BUILD=${BUILDDOCKER} \
 	BINARY=${BINARY} \
 	make build-in-docker
-	
-RUN mv AppMain /app/${APPNAME} \
-    && mkdir -p /app/storage/logs \
-    && mkdir -p /app/storage/loghealth
-# RUN CGO_ENABLED=1  go build -o /app/covid-report-api ./cmd/api/api.go
 
+# copy file to path: /app
+RUN make move-in-docker
 
 ############################
 # STEP 2 build a small image
 ############################
 FROM scratch
-
-
-
 WORKDIR /app
-
-
 # Import from builder.
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
@@ -77,5 +69,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk1NDc0NjcxXX0=
+eyJoaXN0b3J5IjpbLTQ2MDY0ODQxMl19
 -->

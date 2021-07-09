@@ -65,7 +65,7 @@ ENV TZ=Asia/Bangkok
 ENTRYPOINT /app/${BINARY}
 ```
 
-## Makfile
+## Makefile For Build Docker Image
 ```makefile
 .PHONY: all
 ifndef BINARY
@@ -94,11 +94,11 @@ build-in-docker:
 	
 move-in-docker:
 	mv ${BINARY} /app/${BINARY} \
-    && mkdir -p /app/logs \
-    && mkdir -p /app/storage
+    && mkdir -p /app/logs \ # example 
+    && mkdir -p /app/storage # example 
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMjMyMzU5NiwxNzQ4NDk2NTEzXX0=
+eyJoaXN0b3J5IjpbLTE4OTQ0OTU5OTcsMTc0ODQ5NjUxM119
 -->

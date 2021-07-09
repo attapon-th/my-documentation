@@ -83,8 +83,10 @@ GOMAINFILE=main.go
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
 
 docker-build:
-	docker build --build-arg BUILDDOCKER=$(BUILD) -t ${GIT_REGISTRY_URL}:latest .
+	docker build --build-arg BUILDDOCKER=$(BUILD) -t ${GIT_REGISTRY_URL}:${VERSION} .
 
+docker-addtags:
+	# docker tag ${GIT_REGISTRY_URL}:${VERSION} ${GIT_REGISTRY_URL}:latest
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
 	-a -installsuffix cgo \
@@ -99,5 +101,5 @@ move-in-docker:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDk3MjAyNzYsMTc0ODQ5NjUxM119
+eyJoaXN0b3J5IjpbLTIwNzk5MTA0NzIsMTc0ODQ5NjUxM119
 -->

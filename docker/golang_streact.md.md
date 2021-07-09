@@ -32,13 +32,10 @@ RUN mkdir -p /app
 
 # Build the binary
 ARG BUILDDOCKER
-ARG APPNAME
+ARG BINARY
 RUN BUILD=${BUILDDOCKER} \
-	APPNAME=$APPNAME \
-	CGO_ENABLED=0 GOOS=linux go build \
-	-a -installsuffix cgo \
-	${LDFLAGS} \
-	-o ${APPNAME} ${GOMAINFILE}
+	BINARY=${BINARY} \
+	make build-in-docker
 RUN mv AppMain /app/${APPNAME} \
     && mkdir -p /app/storage/logs \
     && mkdir -p /app/storage/loghealth
@@ -77,5 +74,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjg2NjI5NDldfQ==
+eyJoaXN0b3J5IjpbLTQ5NTc0ODk1Ml19
 -->

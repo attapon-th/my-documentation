@@ -89,8 +89,7 @@ docker-addtags:
 	
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
-	-a -installsuffix cgo \
-	${LDFLAGS} \
+	-a -installsuffix cgo ${LDFLAGS} \
 	-o ${BINARY} ${GOMAINFILE}
 	
 move-in-docker:
@@ -101,5 +100,5 @@ move-in-docker:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDA5MzE1MCwxNzQ4NDk2NTEzXX0=
+eyJoaXN0b3J5IjpbLTMwMjMyMzU5NiwxNzQ4NDk2NTEzXX0=
 -->

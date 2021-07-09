@@ -1,6 +1,11 @@
 # Docker file for Golang
 
 ```dockerfile
+
+# Build the binary
+ARG BUILDDOCKER # build version in git commint state
+ARG BINARY # output file binary name 
+
 ############################
 # STEP 1 build executable binary
 ############################
@@ -30,9 +35,6 @@ ADD . .
 RUN mkdir -p /app 
 
 
-# Build the binary
-ARG BUILDDOCKER # build version in git commint state
-ARG BINARY # output file binary name 
 
 # build go file
 RUN BUILD=${BUILDDOCKER} \
@@ -46,7 +48,9 @@ RUN make move-in-docker
 # STEP 2 build a small image
 ############################
 FROM scratch
-WORKDIR /app
+
+WORKDIR /app # fix path
+
 # Import from builder.
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
@@ -55,19 +59,17 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /app /app
 
 COPY docs /app/docs
-# Use an unprivileged user.
-# USER appuser:appuser
-
 
 # Set TimeZone
 ENV TZ=Asia/Bangkok
+
 EXPOSE 80
 
 
-ENTRYPOINT ["/app/AppMain"]
+ENTRYPOINT ["/app/${BINARY}"]
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MDY0ODQxMl19
+eyJoaXN0b3J5IjpbLTE1MjM2NjQwODZdfQ==
 -->

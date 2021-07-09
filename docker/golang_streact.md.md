@@ -35,7 +35,10 @@ ARG BUILDDOCKER
 ARG APPNAME
 RUN BUILD=${BUILDDOCKER} \
 	APPNAME=$APPNAME \
-	make build-in-docker
+	CGO_ENABLED=0 GOOS=linux go build \
+	-a -installsuffix cgo \
+	${LDFLAGS} \
+	-o ${APPNAME} ${GOMAINFILE}
 RUN mv AppMain /app/${APPNAME} \
     && mkdir -p /app/storage/logs \
     && mkdir -p /app/storage/loghealth
@@ -74,5 +77,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1Nzk2OTI1NV19
+eyJoaXN0b3J5IjpbLTEwMjg2NjI5NDldfQ==
 -->

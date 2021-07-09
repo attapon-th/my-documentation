@@ -66,10 +66,26 @@ ENTRYPOINT /app/${BINARY}
 
 ## Makfile
 ```makefile
+.PHONY: all
+ifndef BINARY
+BINARY=AppMain
+endif
+ifndef VERSION
+VERSION=2.3.5
+endif
+ifndef BUILD
+BUILD=`git rev-parse HEAD`
+endif
+# go main file
+GOMAINFILE=main.go
+LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
 
+GIT_REGISTRY_URL="registry.gitlab.com/indev-moph/covid-project/vaccine-summary-api"
+REMOTE_HOST=vaccine
+REMOTE_PATH=/root/vaccine-docker/vaccine-summary-api-2
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4MjExOTQ4NV19
+eyJoaXN0b3J5IjpbMTg0MTE3Mzc3OF19
 -->

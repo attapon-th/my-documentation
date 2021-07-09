@@ -31,11 +31,14 @@ RUN mkdir -p /app
 
 
 # Build the binary
-ARG BUILDDOCKER
-ARG BINARY
+ARG BUILDDOCKER # build version in git commint state
+ARG BINARY # output file binary name 
+
+# build 
 RUN BUILD=${BUILDDOCKER} \
 	BINARY=${BINARY} \
 	make build-in-docker
+	
 RUN mv AppMain /app/${APPNAME} \
     && mkdir -p /app/storage/logs \
     && mkdir -p /app/storage/loghealth
@@ -74,5 +77,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NTc0ODk1Ml19
+eyJoaXN0b3J5IjpbOTk1NDc0NjcxXX0=
 -->

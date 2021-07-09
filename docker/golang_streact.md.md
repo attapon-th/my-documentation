@@ -2,7 +2,7 @@
 
 ```dockerfile
 
-# Build the binary
+# Argument require
 ARG BUILDDOCKER # build version in git commint state
 ARG BINARY # output file binary name 
 
@@ -71,5 +71,5 @@ ENTRYPOINT ["/app/${BINARY}"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjM2NjQwODZdfQ==
+eyJoaXN0b3J5IjpbNzMxOTg3ODgyXX0=
 -->

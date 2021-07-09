@@ -1,7 +1,9 @@
 # Docker file for Golang
 
 ```dockerfile
-
+############################
+# - Docker file Example for Golang into scratch image - #
+############################
 # Argument require
 ARG BUILDDOCKER # build version in git commint state
 ARG BINARY # output file binary name 
@@ -79,13 +81,9 @@ endif
 # go main file
 GOMAINFILE=main.go
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
-
-GIT_REGISTRY_URL="registry.gitlab.com/indev-moph/covid-project/vaccine-summary-api"
-REMOTE_HOST=vaccine
-REMOTE_PATH=/root/vaccine-docker/vaccine-summary-api-2
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MTE3Mzc3OF19
+eyJoaXN0b3J5IjpbMTc0ODQ5NjUxM119
 -->

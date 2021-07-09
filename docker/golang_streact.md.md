@@ -58,18 +58,18 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 # Copy our static executable
 COPY --from=builder /app /app
 
-COPY docs /app/docs
-
 # Set TimeZone
 ENV TZ=Asia/Bangkok
 
-EXPOSE 80
+ENTRYPOINT /app/${BINARY}
+```
 
+## Makfile
+```makefile
 
-ENTRYPOINT ["/app/${BINARY}"]
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMxOTg3ODgyXX0=
+eyJoaXN0b3J5IjpbMTY4MjExOTQ4NV19
 -->

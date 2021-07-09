@@ -33,8 +33,10 @@ RUN mkdir -p /app
 # Build the binary
 ARG BUILDDOCKER
 ARG APPNAME
-RUN BUILD=${BUILDDOCKER} make build-in-docker
-RUN mv AppMain /app/AppMain \
+RUN BUILD=${BUILDDOCKER} \
+	APPNAME=$APPNAME \
+	make build-in-docker
+RUN mv AppMain /app/${APPNAME} \
     && mkdir -p /app/storage/logs \
     && mkdir -p /app/storage/loghealth
 # RUN CGO_ENABLED=1  go build -o /app/covid-report-api ./cmd/api/api.go
@@ -72,5 +74,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4OTMxNzg2XX0=
+eyJoaXN0b3J5IjpbLTQ1Nzk2OTI1NV19
 -->

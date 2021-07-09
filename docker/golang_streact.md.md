@@ -21,7 +21,8 @@ ADD go.mod go.mod
 ADD go.sum go.sum
 RUN go mod download
 
-# ad
+# add project 
+# ควรมีไฟล์ .dockerignore เพื่อไม่เอาไฟล์ที่ไม่จำเป็น
 ADD . .
 
 
@@ -31,6 +32,7 @@ RUN mkdir -p /app
 
 # Build the binary
 ARG BUILDDOCKER
+ARG APPNAME
 RUN BUILD=${BUILDDOCKER} make build-in-docker
 RUN mv AppMain /app/AppMain \
     && mkdir -p /app/storage/logs \
@@ -70,5 +72,5 @@ ENTRYPOINT ["/app/AppMain"]
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNTI0NzMxN119
+eyJoaXN0b3J5IjpbMTU4OTMxNzg2XX0=
 -->

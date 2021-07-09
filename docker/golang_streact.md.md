@@ -81,9 +81,19 @@ endif
 # go main file
 GOMAINFILE=main.go
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
+
+build-in-docker:
+	CGO_ENABLED=0 GOOS=linux go build \
+	-a -installsuffix cgo \
+	${LDFLAGS} \
+	-o ${BINARY} ${GOMAINFILE}
+move-in-docker:
+	mv AppMain /app/AppMain \
+    && mkdir -p /app/storage/logs \
+    && mkdir -p /app/storage/loghealth
 ```
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0ODQ5NjUxM119
+eyJoaXN0b3J5IjpbMTcxODYyNTE5NywxNzQ4NDk2NTEzXX0=
 -->

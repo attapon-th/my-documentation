@@ -72,7 +72,7 @@ ifndef BINARY
 BINARY=AppMain
 endif
 ifndef VERSION
-VERSION=2.3.5
+VERSION=0.0.1
 endif
 ifndef BUILD
 BUILD=`git rev-parse HEAD`
@@ -80,27 +80,34 @@ endif
 # go main file
 GOMAINFILE=main.go
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
+GIT_REGISTRY_URL="registry.gitlab.com/"
+
+
+
 
 docker-build:
-	docker build --build-arg BUILDDOCKER=$(BUILD) -t ${GIT_REGISTRY_URL}:${VERSION} .
+	docker build \
+	--build-arg BUILDDOCKER=$(BUILD) \
+	-t ${GIT_REGISTRY_URL}:latest .
 
 docker-addtags:
-	docker tag ${GIT_REGISTRY_URL}:latest ${GIT_REGISTRY_URL}:${VERSION}
-	
+	docker tag ${GIT_REGISTRY_URL}:latest ${GIT_REGISTRY_URL}:${VERSION} 
+
+docker-push:
+	docker push ${GIT_REGISTRY_URL}:latest 
+
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
 	-a -installsuffix cgo ${LDFLAGS} \
 	-o ${BINARY} ${GOMAINFILE}
 	
 move-in-docker:
-	mv ${BINARY} /app/${BINARY} \
-    && mkdir -p /app/logs \ # example 
-    && mkdir -p /app/storage # example 
+	mv ${BINARY} /app/${BINARY}  
 ```
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc3MjQ4Njk5LDk0OTExNDQ4MSwtMTg5ND
-Q5NTk5NywxNzQ4NDk2NTEzXX0=
+eyJoaXN0b3J5IjpbNzEwOTM0NjQsNDc3MjQ4Njk5LDk0OTExND
+Q4MSwtMTg5NDQ5NTk5NywxNzQ4NDk2NTEzXX0=
 -->

@@ -85,7 +85,7 @@ docker-build:
 	docker build --build-arg BUILDDOCKER=$(BUILD) -t ${GIT_REGISTRY_URL}:${VERSION} .
 
 docker-addtags:
-	docker tag ${GIT_REGISTRY_URL}:${VERSION} ${GIT_REGISTRY_URL}:latest
+	docker tag ${GIT_REGISTRY_URL}:latest ${GIT_REGISTRY_URL}:${VERSION}
 	
 build-in-docker:
 	CGO_ENABLED=0 GOOS=linux go build \
@@ -101,6 +101,6 @@ move-in-docker:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ5MTE0NDgxLC0xODk0NDk1OTk3LDE3ND
-g0OTY1MTNdfQ==
+eyJoaXN0b3J5IjpbNDc3MjQ4Njk5LDk0OTExNDQ4MSwtMTg5ND
+Q5NTk5NywxNzQ4NDk2NTEzXX0=
 -->

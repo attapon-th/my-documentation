@@ -5,8 +5,7 @@
 # - Docker file Example for Golang into scratch image - #
 ############################
 # Argument require
-ARG BUILDDOCKER # build version in git commint state
-
+ARG BUILDDOCKER
 ############################
 # STEP 1 build executable binary
 ############################
@@ -15,42 +14,34 @@ FROM golang:1.16-alpine  as builder
 RUN apk -U --no-cache add \
     build-base git gcc bash tzdata git make ca-certificates \
     && update-ca-certificates
-    
+
 # Set TimeZone (require)
 ENV TZ=Asia/Bangkok
 
-# 
 WORKDIR /go/src/AppBuild
 
 # Download Modules
-ADD go.mod go.mod
-ADD go.sum go.sum
+ADD *.mod .
 RUN go mod download
 
 # add project 
 # ควรมีไฟล์ .dockerignore เพื่อไม่เอาไฟล์ที่ไม่จำเป็น
 ADD . .
 
-
 # Create directory for binary
 RUN mkdir -p /app 
 
-
-
 # build go file
 RUN BUILD=${BUILDDOCKER} \
-	BINARY=${BINARY} \
-	make build-in-docker
-
-# copy file to path: /app
-RUN make move-in-docker
+    BINARY=${BINARY} \
+    make build-in-docker move-in-docker
 
 ############################
 # STEP 2 build a small image
 ############################
 FROM scratch
 
-WORKDIR /app # fix path
+WORKDIR /app
 
 # Import from builder.
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
@@ -62,7 +53,9 @@ COPY --from=builder /app /app
 # Set TimeZone
 ENV TZ=Asia/Bangkok
 
-ENTRYPOINT /app/${BINARY}
+ENV PATH=/app:$PATH
+
+ENTRYPOINT ["AppMain"]
 ```
 
 ## Makefile For Build Docker Image
@@ -108,6 +101,6 @@ move-in-docker:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEwOTM0NjQsNDc3MjQ4Njk5LDk0OTExND
-Q4MSwtMTg5NDQ5NTk5NywxNzQ4NDk2NTEzXX0=
+eyJoaXN0b3J5IjpbLTE1NTk1OTg1NTYsNDc3MjQ4Njk5LDk0OT
+ExNDQ4MSwtMTg5NDQ5NTk5NywxNzQ4NDk2NTEzXX0=
 -->

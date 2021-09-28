@@ -4,9 +4,9 @@
 ## logrotate
 	sudo vi /etc/logrotate.d/traefik
 
-Conif
+Config:
 ```
-/var/log/traefik.log
+/var/log/traefik/*.log
 {
     compress
     create 0640 root root
@@ -28,5 +28,5 @@ Conif
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyODI1ODIxN119
+eyJoaXN0b3J5IjpbMTk4NzM5Mjc1N119
 -->

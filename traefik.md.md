@@ -2,12 +2,10 @@
 # Traefik Configuration
 
 ## logrotate
+	sudo vi /etc/logrotate.d/traefik
+
+Conif
 ```
-# add logrotate config
-# _> sudo vi /etc/logrotate.d/traefik
-# to make log-rotate change take effect launch 
-# sudo logrotate /etc/logrotate.d/traefik
-# or reboot
 /var/log/traefik.log
 {
     compress
@@ -23,11 +21,12 @@
     endscript
 }
 ```
+	sudo logrotate /etc/logrotate.d/traefik
 
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxODc0NjA0OF19
+eyJoaXN0b3J5IjpbLTcyODI1ODIxN119
 -->

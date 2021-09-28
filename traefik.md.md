@@ -22,7 +22,7 @@ Config:
 }
 ```
 	sudo logrotate /etc/logrotate.d/traefik --debug
-	# OR
+	
 	sudo logrotate /etc/logrotate.d/traefik
 
 
@@ -30,5 +30,5 @@ Config:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MDE3NTk5MiwxOTg3MzkyNzU3XX0=
+eyJoaXN0b3J5IjpbMTIxMDQzNDE2OCwxOTg3MzkyNzU3XX0=
 -->

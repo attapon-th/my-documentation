@@ -3,9 +3,10 @@
 
 ## logrotate
 ```
-# /etc/logrotate.d/traefik
-
-# to make log-rotate change take effect launch sudo logrotate /etc/logrotate.d/traefik
+# add logrotate config
+# _> sudo vi /etc/logrotate.d/traefik
+# to make log-rotate change take effect launch 
+# sudo logrotate /etc/logrotate.d/traefik
 # or reboot
 /var/log/traefik.log
 {
@@ -23,12 +24,10 @@
 }
 ```
 
-```shell
-sudo vi /etc/logrotate.d/traefik
-```
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NDYwNzcxMV19
+eyJoaXN0b3J5IjpbLTUxODc0NjA0OF19
 -->

@@ -22,8 +22,6 @@ services:
         - "traefik.http.services.${SERVICE}.loadbalancer.server.port=80"
     networks:
       - traefik-public
- 
-    
 networks:
   traefik-public:
     external: true
@@ -32,5 +30,5 @@ networks:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDUzMzA3NzY1LC0zMTEzNTQyMzFdfQ==
+eyJoaXN0b3J5IjpbLTgzMjA2MzEwNSwtMzExMzU0MjMxXX0=
 -->

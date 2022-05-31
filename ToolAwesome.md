@@ -1,9 +1,15 @@
 # TOOL 
 
-TOOLS ====== * rmlint - [https://rmlint.readthedocs.io/en/latest/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbTRoZEtGNUhqYlh4clhTeXN6NUF6bHZyZHhfZ3xBQ3Jtc0tsajZPTHhLUml1ZE5PRnJwOG1mMU5xSzdubWt5OWo1bm54bGIzRXEwVk1aVmRwUEtCWjgtcmUtdHlJYmlobEgwWVBmNFhqUGdVZWp4WkwwRWlmUkdtLUlOUlBOOERaUzA5UUp3VFY1NWR2MW1GcF9hSQ&q=https%3A%2F%2Frmlint.readthedocs.io%2Fen%2Flatest%2F&v=szehPBOwqlI) * rsync - [https://linux.die.net/man/1/rsync](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbHlITUNyNmxwOFZ4b1g0eGNkYm9JUi1fSWxJd3xBQ3Jtc0tuUFVqeWZTdjZYZWNwdi13NjN6SGhEYTJsWDJicmJjd25LWm9yTHlEM2tKYWhUeVJoMXppQnZ2eWlucmpMUHpFQ2s0NDc3T0cxaHZwY1hKUF84ZmpLVUU2YXAxZFV6ZGY0b2lFSGRJRHU1TVQ2Y1hoYw&q=https%3A%2F%2Flinux.die.net%2Fman%2F1%2Frsync&v=szehPBOwqlI) * rclone - [https://rclone.org/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2puZklJcTZ4UHUxTDJsODBRejdmUmxBTXJYZ3xBQ3Jtc0trY0VockRUQkVwTlEzUmt4V3d3eXE5LXBsRlNtbnd5QUVuc1o1c1lGaUN3NGR6WkxoaW5iaFVocjdJMERZQ2RjVzNqSVNPMDVXV1JVd0FFMm4wbDZkeldjQW1HcllPNDhLNjJDVmJ1bzhWR2FaTTFJVQ&q=https%3A%2F%2Frclone.org%2F&v=szehPBOwqlI) * ncdu - [https://dev.yorhel.nl/ncdu](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkhBeGNEWWVySV96amFIaWxyQTlpYVp3aV9NZ3xBQ3Jtc0tuQUs3RFJOWktqLUQ3QUhMaDBNYmFKYV9HdFQ3bjBlRVYwNGJOdk1nZW1ENmZPRUNSZDdQcWRFdllXRGRiZmdqNHJlOHF5Mk43MG1oSEdqTXR0NDZnRUdaZUc2a3FvLUZnOEowNFJKektRZGxFb2xwZw&q=https%3A%2F%2Fdev.yorhel.nl%2Fncdu&v=szehPBOwqlI) * btop - [https://github.com/aristocratos/btop](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbmhOSkRpVE5VLVE2Tkxiek9NZ3V5eEVCR2tjUXxBQ3Jtc0ttU2FGbXJmVE9FV0NocTRqMnR6b1JnYTZpWERDdVpxZ2ExVVpvUWIzd29EWHVMOFd2Y2VEWVlEZnFackZrdTdhZFFPMV9YVVBsRUFHZThqVHNMemUtZlVqUlM4VUsyVDNYa2FmN3JFTHBSVzFuYXJRRQ&q=https%3A%2F%2Fgithub.com%2Faristocratos%2Fbtop&v=szehPBOwqlI) * ntfy - [https://ntfy.readthedocs.io/en/v2.0.1/](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEFDZnZIWHgzWENDVkY2ZEpYajRGVHRqV1VmZ3xBQ3Jtc0tsXy1lMW1NU2d4WHNVVE9WYTJnVjJRZ0dRbnQyaGU5YTlnck0waUsweDN3R2RpYngwSWxJRnBqMlA3RDl4cUxQV2Y4OHpNRFpRNUxBMWZpLVRzTWhHV01yWnFtbnNwcWQ1ZnZmNG1GaDlkUnM3d1A3TQ&q=https%3A%2F%2Fntfy.readthedocs.io%2Fen%2Fv2.0.1%2F&v=szehPBOwqlI)
+TOOLS
+- rmlint - [https://rmlint.readthedocs.io/en/latest/](https://rmlint.readthedocs.io/en/latest/)
+- rsync - [https://linux.die.net/man/1/rsync](https://linux.die.net/man/1/rsync)
+- rclone - [https://rclone.org/](https://rclone.org/)
+- ncdu - [https://dev.yorhel.nl/ncdu](https://dev.yorhel.nl/ncdu)
+- btop - [https://github.com/aristocratos/btop](https://github.com/aristocratos/btop)
+- ntfy - [https://ntfy.readthedocs.io/en/v2.0.1/](https://ntfy.readthedocs.io/en/v2.0.1/)
 
 
-> Written with [StackEdit](https://stackedit.io/).
+> Written with [StackEdit](https://stackedit.io/).`enter code here`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5NzM2NDI5OF19
+eyJoaXN0b3J5IjpbLTUwMDE3MjUwM119
 -->
